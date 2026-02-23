@@ -1,0 +1,35 @@
+# Weekly Spending Analyzer
+
+# 1. Input Budget
+weekly_budget = int(input("Enter your weekly budget: "))
+
+# 2. Input days
+number_of_days = int(input("Enter the number of days you want to track: "))
+
+# 3. Create an empty list
+spending = []
+
+# 4. Collect spending
+for i in range(number_of_days):
+    amount = float(input(f"Enter spending {i + 1}: "))
+    spending.append(amount)
+
+# 5. Calculate total
+total_spending = sum(spending)
+
+# 6. Remaining budget
+remaining_budget = weekly_budget - total_spending
+
+# 7. Summary
+print("\n--- Spending Summary ---")
+print("Spending list:", spending)
+print("Total spending:", total_spending)
+print("Remaining budget:", remaining_budget)
+
+# 8. Conditions
+if remaining_budget > 0:
+    print("Status: You are under budget")
+elif remaining_budget == 0:
+    print("Status: You are exactly on budget")
+else:
+    print("Status: You are over budget")
